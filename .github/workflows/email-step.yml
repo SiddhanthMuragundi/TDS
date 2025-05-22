@@ -1,0 +1,16 @@
+name: Email Step Workflow
+
+on:
+  push:
+    branches:
+      - main  # Replace with your default branch name if different
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: 22f1000662@ds.study.iitm.ac.in
+        run: echo "Hello, world!"
