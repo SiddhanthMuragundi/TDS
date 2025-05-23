@@ -6,7 +6,6 @@ import os
 
 app = FastAPI()
 
-# Enable CORS for all origins
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -14,12 +13,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load JSON data
 file_path = os.path.join(os.path.dirname(__file__), "q-vercel-python.json")
 with open(file_path, "r") as f:
     student_records = json.load(f)
 
-# Create a dict for fast lookup
 student_data = {student["name"]: student["marks"] for student in student_records}
 
 @app.get("/api")

@@ -1,4 +1,16 @@
 {
-  "builds": [{ "src": "api/index.py", "use": "@vercel/python" }],
-  "routes": [{ "src": "/api", "dest": "api/index.py" }]
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": { "includeFiles": ["api/q-vercel-python.json"] }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api",
+      "dest": "api/index.py"
+    }
+  ]
 }
