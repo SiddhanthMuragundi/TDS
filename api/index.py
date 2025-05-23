@@ -19,8 +19,8 @@ with open(file_path, "r") as f:
 
 student_data = {student["name"]: student["marks"] for student in student_records}
 
-@app.get("/api")
-async def get_marks(request: Request):
+@app.get("/")
+def get_marks(request: Request):
     names = request.query_params.getlist("name")
     marks = [student_data.get(name, None) for name in names]
     return JSONResponse(content={"marks": marks})
